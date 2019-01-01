@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Cortex\Installer\Console;
 
 use ZipArchive;
@@ -34,8 +36,9 @@ class NewCommand extends Command
     /**
      * Execute the command.
      *
-     * @param  \Symfony\Component\Console\Input\InputInterface  $input
-     * @param  \Symfony\Component\Console\Output\OutputInterface  $output
+     * @param \Symfony\Component\Console\Input\InputInterface   $input
+     * @param \Symfony\Component\Console\Output\OutputInterface $output
+     *
      * @return void
      */
     protected function execute(InputInterface $input, OutputInterface $output)
@@ -96,12 +99,13 @@ class NewCommand extends Command
     /**
      * Verify that the application does not already exist.
      *
-     * @param  string  $directory
+     * @param string $directory
+     *
      * @return void
      */
     protected function verifyApplicationDoesntExist($directory)
     {
-        if ((is_dir($directory) || is_file($directory)) && $directory != getcwd()) {
+        if ((is_dir($directory) || is_file($directory)) && $directory !== getcwd()) {
             throw new RuntimeException('Application already exists!');
         }
     }
@@ -119,8 +123,9 @@ class NewCommand extends Command
     /**
      * Download the temporary Zip to the given file.
      *
-     * @param  string  $zipFile
-     * @param  string  $version
+     * @param string $zipFile
+     * @param string $version
+     *
      * @return $this
      */
     protected function download($zipFile, $version = 'master')
@@ -134,7 +139,7 @@ class NewCommand extends Command
                 break;
         }
 
-        $response = (new Client)->get('https://github.com/rinvex/cortex/archive/'.$filename);
+        $response = (new Client())->get('https://github.com/rinvex/cortex/archive/'.$filename);
 
         file_put_contents($zipFile, $response->getBody());
 
@@ -144,13 +149,14 @@ class NewCommand extends Command
     /**
      * Extract the Zip file into the given directory.
      *
-     * @param  string  $zipFile
-     * @param  string  $directory
+     * @param string $zipFile
+     * @param string $directory
+     *
      * @return $this
      */
     protected function extract($zipFile, $directory)
     {
-        $archive = new ZipArchive;
+        $archive = new ZipArchive();
 
         $archive->open($zipFile);
 
@@ -164,7 +170,8 @@ class NewCommand extends Command
     /**
      * Clean-up the Zip file.
      *
-     * @param  string  $zipFile
+     * @param string $zipFile
+     *
      * @return $this
      */
     protected function cleanUp($zipFile)
@@ -179,17 +186,18 @@ class NewCommand extends Command
     /**
      * Make sure the storage and bootstrap cache directories are writable.
      *
-     * @param  string  $appDirectory
-     * @param  \Symfony\Component\Console\Output\OutputInterface  $output
+     * @param string                                            $appDirectory
+     * @param \Symfony\Component\Console\Output\OutputInterface $output
+     *
      * @return $this
      */
     protected function prepareWritableDirectories($appDirectory, OutputInterface $output)
     {
-        $filesystem = new Filesystem;
+        $filesystem = new Filesystem();
 
         try {
-            $filesystem->chmod($appDirectory.DIRECTORY_SEPARATOR."bootstrap/cache", 0755, 0000, true);
-            $filesystem->chmod($appDirectory.DIRECTORY_SEPARATOR."storage", 0755, 0000, true);
+            $filesystem->chmod($appDirectory.DIRECTORY_SEPARATOR.'bootstrap/cache', 0755, 0000, true);
+            $filesystem->chmod($appDirectory.DIRECTORY_SEPARATOR.'storage', 0755, 0000, true);
         } catch (IOExceptionInterface $e) {
             $output->writeln('<comment>You should verify that the "storage" and "bootstrap/cache" directories are writable.</comment>');
         }
@@ -200,7 +208,8 @@ class NewCommand extends Command
     /**
      * Get the version that should be downloaded.
      *
-     * @param  \Symfony\Component\Console\Input\InputInterface  $input
+     * @param \Symfony\Component\Console\Input\InputInterface $input
+     *
      * @return string
      */
     protected function getVersion(InputInterface $input)
