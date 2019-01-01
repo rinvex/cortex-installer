@@ -1,0 +1,60 @@
+{
+    "name": "cortex/installer",
+    "description": "Cortex Installer is a command line tool that depends on composer to install the Cortex project seamlessly.",
+    "keywords": [
+        "rinvex",
+        "cortex",
+        "flexible",
+        "framework",
+        "laravel",
+        "themes",
+        "solution",
+        "extension",
+        "enterprise",
+        "application",
+        "multi-lingual",
+        "multi-tenant",
+        "bootstrap",
+        "module"
+    ],
+    "license": "MIT",
+    "homepage": "https://rinvex.com",
+    "support": {
+        "email": "help@rinvex.com",
+        "issues": "https://github.com/rinvex/cortex/issues",
+        "source": "https://github.com/rinvex/cortex",
+        "docs": "https://github.com/rinvex/cortex/blob/master/README.md"
+    },
+    "authors": [
+        {
+            "name": "Rinvex LLC",
+            "homepage": "https://rinvex.com",
+            "email": "help@rinvex.com"
+        },
+        {
+            "name": "Abdelrahman Omran",
+            "homepage": "https://omranic.com",
+            "email": "me@omranic.com",
+            "role": "Project Lead"
+        },
+        {
+            "name": "The Generous Laravel Community",
+            "homepage": "https://github.com/rinvex/cortex/contributors"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Cortex\\Installer\\Console\\": "src/"
+        }
+    },
+    "require": {
+        "ext-zip": "*",
+        "guzzlehttp/guzzle": "~6.0",
+        "symfony/console": "~3.0|~4.0",
+        "symfony/filesystem": "~3.0|~4.0",
+        "symfony/process": "~3.0|~4.0"
+    },
+    "bin": [
+        "cortex"
+    ]
+}
