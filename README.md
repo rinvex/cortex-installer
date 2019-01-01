@@ -6,7 +6,7 @@
 [![Scrutinizer Code Quality](https://img.shields.io/scrutinizer/g/rinvex/cortex-installer.svg?label=Scrutinizer&style=flat-square)](https://scrutinizer-ci.com/g/rinvex/cortex-installer/)
 [![Code Climate](https://img.shields.io/codeclimate/github/rinvex/cortex-installer.svg?label=CodeClimate&style=flat-square)](https://codeclimate.com/github/rinvex/cortex-installer)
 [![Travis](https://img.shields.io/travis/rinvex/cortex-installer.svg?label=TravisCI&style=flat-square)](https://travis-ci.org/rinvex/cortex-installer)
-[![StyleCI](https://styleci.io/repos/90121903/shield)](https://styleci.io/repos/90121903)
+[![StyleCI](https://styleci.io/repos/163716440/shield)](https://styleci.io/repos/163716440)
 [![License](https://img.shields.io/packagist/l/cortex/installer.svg?label=License&style=flat-square)](https://github.com/rinvex/cortex-installer/blob/develop/LICENSE)
 
 
