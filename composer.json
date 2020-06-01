@@ -50,7 +50,7 @@
     "require": {
         "ext-zip": "*",
         "guzzlehttp/guzzle": "~6.0",
-        "symfony/console": "~3.0|~4.0",
+        "symfony/console": "^5.1.0",
         "symfony/filesystem": "~3.0|~4.0",
         "symfony/process": "~3.0|~4.0"
     },
