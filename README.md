@@ -1,5 +1,11 @@
 # Cortex Installer
 
+⚠️ This package is abandoned and no longer maintained. No replacement package was suggested. ⚠️
+
+👉 If you are interested to step on as the main maintainer of this package, please [reach out to me](https://twitter.com/omranic)!
+
+---
+
 **Cortex Installer** is a command line tool that depends on composer to install the Cortex project seamlessly.
 
 [![Packagist](https://img.shields.io/packagist/v/cortex/installer.svg?label=Packagist&style=flat-square)](https://packagist.org/packages/cortex/installer)
